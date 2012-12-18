@@ -1,13 +1,35 @@
 This is a bash script (originally written by Fernando Takai) that allows auto-completion of grails commands from the command line. Basically extending the bash-like auto-completion functionality to include grails commands.
 
+STEP 1 :
+
 To use it you have to have gawk (it's default on some linux distros -- but on mac, you have to install trough mac ports)
+
+STEP 2 :
+ALT 1
+
+sudo cp Downloads/grails-autocomplete/grails_autocomplete /etc/bash_completion.d/
+
+ALT 2
+
+Ensure bash_completition is enabled in /.bashrc
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
 
 To start using it you need to add this:
 [ -r /path/to/the/file ] && source /path/to/the/file
 
 To the top of your ~/.bashrc or ~/.bash_profile scripts.
 
+STEP 3 :
+
 For your changes to take affect you must open a new shell or re-login to your current shell (su - your_user).
+
+<b>USE IT</b>
 
 To use it, just go your grails project and try:
 grails list<tab>
